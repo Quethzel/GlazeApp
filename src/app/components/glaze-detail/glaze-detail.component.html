@@ -2,7 +2,7 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title>Arena de Mar</ion-card-title>
-      <ion-card-subtitle color="success">ID: FF</ion-card-subtitle>
+      <ion-card-subtitle color="tertiary">ID: FFFF</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
@@ -13,11 +13,11 @@
             <ion-grid>
               <ion-row class="ion-justify-content-center ion-align-items-center">
                 <ion-col class="content-center">
-                  <img class="custom-icon" src="assets/icon/decorative.png" />
-                  <p>Decorativo</p>
+                  <ion-icon size="large" name="sparkles-outline" color="success"></ion-icon>
+                  <p>Pieza Decorativa</p>
                 </ion-col>
                 <ion-col class="content-center">
-                  <img class="custom-icon" src="assets/icon/food-safe.png" />
+                  <ion-icon size="large" name="restaurant-outline" color="danger"></ion-icon>
                   <p>Apto para Alimentos</p>
                 </ion-col>
               </ion-row>
@@ -63,13 +63,16 @@
         <ion-item>
           <ion-label>
             <h2>Notas</h2>
-            <ion-grid>
+            <ion-note>
+              Este esmalte es apto para alimentos, pero no es recomendable para uso en microondas.
+            </ion-note>
+            <!-- <ion-grid>
               <ion-row>
                 <ion-col>
                   <p>Este esmalte es apto para alimentos, pero no es recomendable para uso en microondas.</p>
                 </ion-col>
               </ion-row>
-            </ion-grid>
+            </ion-grid> -->
           </ion-label>
         </ion-item>
       </ion-list>

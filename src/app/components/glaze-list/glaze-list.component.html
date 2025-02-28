@@ -1,0 +1,12 @@
+
+  <ion-content>
+    <ion-list>
+      <ion-item *ngFor="let glaze of glazes" (click)="goToDetail(glaze.id)">
+        <ion-label>
+          <h2>{{ glaze.name }}</h2>
+          <p><ion-text color="tertiary">ID: {{ glaze.id }}</ion-text></p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
