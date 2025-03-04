@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
+import { Glaze } from 'src/app/models/glaze';
+import { GlazeService } from 'src/app/services/glaze.service';
 
 @Component({
   selector: 'app-glaze-list',
@@ -10,14 +12,11 @@ import { CommonModule } from '@angular/common';
   imports: [IonicModule, CommonModule]
 })
 export class GlazeListComponent  implements OnInit {
-  glazes = [
-    { id: '0000', name: 'Azul Cobalto' },
-    { id: '000A', name: 'Verde Esmeralda' },
-    { id: '003B', name: 'Rojo Carmesí' },
-    { id: 'FFFF', name: 'Arena de Mar' }
-  ];
+  glazes: Glaze[] = [];
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController, private glazeService: GlazeService) {
+    this.glazes = this.glazeService.getAllGlazes();
+  }
 
   ngOnInit() {}
 

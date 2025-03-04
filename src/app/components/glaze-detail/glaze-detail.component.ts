@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { Glaze } from 'src/app/models/glaze';
 
 @Component({
   standalone: true,
@@ -9,7 +10,8 @@ import { IonicModule } from '@ionic/angular';
   styleUrls: ['./glaze-detail.component.scss'],
 })
 export class GlazeDetailComponent  implements OnInit {
-
+  @Input() glaze!: Glaze;
+  
   constructor() {
   }
 

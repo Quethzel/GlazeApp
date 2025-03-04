@@ -1,8 +1,8 @@
 <div id="container">
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Arena de Mar</ion-card-title>
-      <ion-card-subtitle color="tertiary">ID: FFFF</ion-card-subtitle>
+      <ion-card-title>{{glaze.name}}</ion-card-title>
+      <ion-card-subtitle color="tertiary">ID: {{glaze.id}}</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
@@ -13,12 +13,12 @@
             <ion-grid>
               <ion-row class="ion-justify-content-center ion-align-items-center">
                 <ion-col class="content-center">
-                  <ion-icon size="large" name="sparkles-outline" color="success"></ion-icon>
+                  <ion-icon size="large" name="sparkles-outline" [color]="glaze.isDecorative ? 'success': 'danger'"></ion-icon>
                   <p>Pieza Decorativa</p>
                 </ion-col>
                 <ion-col class="content-center">
-                  <ion-icon size="large" name="restaurant-outline" color="danger"></ion-icon>
-                  <p>Apto para Alimentos</p>
+                  <ion-icon size="large" name="restaurant-outline" [color]="glaze.isFoodSafe ? 'success' : 'danger'"></ion-icon>
+                  <p>{{ glaze.isFoodSafe ? 'Apto para Alimentos' : 'No apto para Alimentos' }}</p>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -27,25 +27,25 @@
         <ion-item>
           <ion-label>Viscosidad</ion-label>
           <ion-text color="primary">
-            Estable
+            {{glaze.viscosity}}
           </ion-text>
         </ion-item>
         <ion-item>
           <ion-label>Acabado</ion-label>
           <ion-text color="primary">
-            Satinado
+            {{glaze.finish}}
           </ion-text>
         </ion-item>
         <ion-item>
           <ion-label>Superficie</ion-label>
           <ion-text color="primary">
-            Moteado
+            {{glaze.surface}}
           </ion-text>
         </ion-item>
         <ion-item>
           <ion-label>Espesor Recomendado</ion-label>
           <ion-text color="primary">
-            3 - 4 capas
+            {{glaze.recommendedThickness}}
           </ion-text>
         </ion-item>
         <ion-item>
@@ -57,22 +57,15 @@
         <ion-item>
           <ion-label>Arcilla Recomendada</ion-label>
           <ion-text color="primary">
-            401, 411
+            {{glaze.recommendedClay}}
           </ion-text>
         </ion-item>
         <ion-item>
           <ion-label>
             <h2>Notas</h2>
             <ion-note>
-              Este esmalte es apto para alimentos, pero no es recomendable para uso en microondas.
+              {{glaze.notes}}
             </ion-note>
-            <!-- <ion-grid>
-              <ion-row>
-                <ion-col>
-                  <p>Este esmalte es apto para alimentos, pero no es recomendable para uso en microondas.</p>
-                </ion-col>
-              </ion-row>
-            </ion-grid> -->
           </ion-label>
         </ion-item>
       </ion-list>
