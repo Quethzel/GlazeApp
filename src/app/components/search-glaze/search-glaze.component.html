@@ -1,12 +1,19 @@
-<ion-searchbar 
+<ion-searchbar #searchbar
   [debounce]="1000" animated="true"
   (ionInput)="handleInput($event)" 
   (ionClear)="onClearSearchbar($event)"
   placeholder="ID o Nombre">
 </ion-searchbar>
 
-<ion-list *ngIf="filteredGlazes.length > 0">
-  <ion-item *ngFor="let glaze of filteredGlazes" (click)="onSelect(glaze)">
-    {{ glaze.name }} ({{ glaze.id }})
-  </ion-item>
-</ion-list>
+
+  <!-- <ion-list>
+    <ion-item>
+      <ion-input [formControl]="searchControl" placeholder="ID o Nombre"></ion-input>
+    </ion-item>
+  </ion-list> -->
+    
+  <ion-list *ngIf="filteredGlazes.length > 0">
+    <ion-item *ngFor="let glaze of filteredGlazes" (click)="onSelect(glaze)">
+      {{ glaze.name }} ({{ glaze.id }})
+    </ion-item>
+  </ion-list>

@@ -1,12 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { Glaze } from 'src/app/models/glaze';
-import { IonicModule, IonSearchbar } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
+import { IonSearchbar, IonList, IonItem } from '@ionic/angular/standalone';
 @Component({
   standalone: true,
-  imports: [IonicModule, CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, IonSearchbar, IonList, IonItem],
   selector: 'app-search-glaze',
   templateUrl: './search-glaze.component.html',
   styleUrls: ['./search-glaze.component.scss'],
@@ -15,15 +15,18 @@ export class SearchGlazeComponent  implements OnInit {
 
   @Input() glazes: Glaze[] = []; // Lista de esmaltes
   @Output() selectGlaze = new EventEmitter<Glaze>(); // Emitir el esmalte seleccionado
-
-  searchControl = new FormControl('');
+  
+  @ViewChild('searchbar')
+  searchbar!: IonSearchbar;
+  
+  // searchControl = new FormControl('');
   filteredGlazes: Glaze[] = [];
 
   constructor() {
     // Escuchar cambios y filtrar con un pequeño retraso (300ms)
-    this.searchControl.valueChanges.pipe(debounceTime(300)).subscribe((query) => {
-      this.filterGlazes(query ?? '');
-    });
+    // this.searchControl.valueChanges.pipe(debounceTime(300)).subscribe((query) => {
+    //   this.filterGlazes(query ?? '');
+    // });
   }
 
   ngOnInit(): void {
@@ -66,8 +69,9 @@ export class SearchGlazeComponent  implements OnInit {
   onSelect(glaze: Glaze) {
     this.selectGlaze.emit(glaze);
     // this.searchControl.setValue(''); // Limpiar búsqueda
-    
     this.filteredGlazes = [];
+
+    this.searchbar.value = ''; // Limpiar búsqueda
   }
 
 }

@@ -4,13 +4,13 @@
     <app-search-glaze [glazes]="glazes" (selectGlaze)="goToDetail($event)">
     </app-search-glaze>
 
-    <!-- <ion-list>
-      <ion-item *ngFor="let glaze of glazes" (click)="goToDetail(glaze.id)">
+    <ion-list>
+      <ion-item *ngFor="let glaze of glazes" (click)="goToDetail(glaze)">
         <ion-label>
           <h2>{{ glaze.name }}</h2>
           <p><ion-text>ID: {{ glaze.id }}</ion-text></p>
         </ion-label>
       </ion-item>
-    </ion-list> -->
+    </ion-list>
   </ion-content>
 

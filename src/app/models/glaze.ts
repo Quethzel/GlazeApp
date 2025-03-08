@@ -13,6 +13,7 @@ export class Glaze {
       public recommendedFiring?: string,
       public recommendedClay?: string,
       public notes? : string,
-      public cone?: number
+      public cone?: number,
+      public imageUrl?: string
     ) { }
   }
