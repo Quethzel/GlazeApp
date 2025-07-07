@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
-import { GlazeDetailComponent } from '../components/glaze-detail/glaze-detail.component';
 import { ActivatedRoute } from '@angular/router';
 import { GlazeService } from '../services/glaze.service';
 import { Glaze } from '../models/glaze';
+import { CustomPalettsComponent } from "../components/custom-paletts/custom-paletts.component";
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, GlazeDetailComponent]
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, CustomPalettsComponent]
 })
 export class Tab2Page implements OnInit {
   glazeId: string | null = null;

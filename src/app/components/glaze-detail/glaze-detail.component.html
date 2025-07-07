@@ -1,79 +1,85 @@
-<ion-card>
-  <img
-  [src]="glaze.imageUrl ? glaze.imageUrl : 'https://ionicframework.com/docs/img/demos/card-media.png'"
-  alt="Imagen de esmalte"
-  class="glaze-image"
-/>
-  <ion-card-header>
-    <ion-card-title>{{glaze.name}}</ion-card-title>
-    <ion-card-subtitle>ID: {{glaze.id}}</ion-card-subtitle>
-  </ion-card-header>
-
-  <ion-card-content>
-    <ion-list>
-      <ion-item>
-        <ion-label>
-          <h2>Uso</h2>
-          <ion-grid>
-            <ion-row class="ion-justify-content-center ion-align-items-center">
-              <ion-col class="content-center">
-                <ion-icon size="large" name="sparkles-outline"
-                  [color]="glaze.isDecorative ? 'success': 'danger'"></ion-icon>
-                <p>Pieza Decorativa</p>
-              </ion-col>
-              <ion-col class="content-center">
-                <ion-icon size="large" name="restaurant-outline"
-                  [color]="glaze.isFoodSafe ? 'success' : 'danger'"></ion-icon>
-                <p>{{ glaze.isFoodSafe ? 'Apto para Alimentos' : 'No apto para Alimentos' }}</p>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Viscosidad</ion-label>
-        <ion-text color="primary">
-          {{glaze.viscosity}}
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label>Acabado</ion-label>
-        <ion-text color="primary">
-          {{glaze.finish}}
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label>Superficie</ion-label>
-        <ion-text color="primary">
-          {{glaze.surface}}
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label>Espesor Recomendado</ion-label>
-        <ion-text color="primary">
-          {{glaze.recommendedThickness}}
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label>Temperatura de Cocción</ion-label>
-        <ion-text color="primary">
-          1200°C
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label>Arcilla Recomendada</ion-label>
-        <ion-text color="primary">
-          {{glaze.recommendedClay}}
-        </ion-text>
-      </ion-item>
-      <ion-item>
-        <ion-label>
-          <h2>Notas</h2>
-          <ion-note>
-            {{glaze.notes}}
-          </ion-note>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-card-content>
-</ion-card>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Resumen del Esmalte</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <img [src]="glaze.imageUrl ? glaze.imageUrl : 'https://ionicframework.com/docs/img/demos/card-media.png'"
+      alt="Imagen de esmalte" class="glaze-image" />
+    <ion-card-header>
+      <ion-card-title>{{glaze.name}}</ion-card-title>
+      <ion-card-subtitle>ID: {{glaze.id}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <h2>Uso</h2>
+            <ion-grid>
+              <ion-row class="ion-justify-content-center ion-align-items-center">
+                <ion-col class="content-center">
+                  <ion-icon size="large" name="sparkles-outline"
+                    [color]="glaze.isDecorative ? 'success': 'danger'"></ion-icon>
+                  <p>Pieza Decorativa</p>
+                </ion-col>
+                <ion-col class="content-center">
+                  <ion-icon size="large" name="restaurant-outline"
+                    [color]="glaze.isFoodSafe ? 'success' : 'danger'"></ion-icon>
+                  <p>{{ glaze.isFoodSafe ? 'Apto para Alimentos' : 'No apto para Alimentos' }}</p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Viscosidad</ion-label>
+          <ion-text color="primary">
+            {{glaze.viscosity}}
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Acabado</ion-label>
+          <ion-text color="primary">
+            {{glaze.finish}}
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Superficie</ion-label>
+          <ion-text color="primary">
+            {{glaze.surface}}
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Espesor Recomendado</ion-label>
+          <ion-text color="primary">
+            {{glaze.recommendedThickness}}
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Temperatura de Cocción</ion-label>
+          <ion-text color="primary">
+            1200°C
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>Arcilla Recomendada</ion-label>
+          <ion-text color="primary">
+            {{glaze.recommendedClay}}
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h2>Notas</h2>
+            <ion-note>
+              {{glaze.notes}}
+            </ion-note>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
